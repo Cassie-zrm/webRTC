@@ -1,0 +1,18 @@
+html,
+body {
+  height: 100%;
+  overflow-y: scroll;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.video {
+  width: 900px;
+  height: 500px;
+  margin: 20px;
+}
+.btn {
+  width: 900px;
+  text-align: right;
+}
