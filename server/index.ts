@@ -10,6 +10,8 @@ const io = new Server(server, {
 // const 
 let ffmpeg:any = null
 io.on('connection', socket => {
+    console.log('连接成功')
+
     ffmpeg = spawn('ffmpeg', [
         '-i', 'pipe:0',
         '-c:v', 'libx264',
@@ -18,7 +20,7 @@ io.on('connection', socket => {
         '-c:a', 'aac',         // 使用 aac 音频编解码器
         '-b:a', '128k',        // 音频比特率为 128k
         '-f', 'flv',
-        'rtmp://8.140.249.87:1935/live/stream'
+        'rtmp://47.121.192.13:1935/live/stream',
     ])
     // ffmpeg = spawn('ffmpeg', [
     //     '-f', 'webm',
@@ -50,6 +52,6 @@ io.on('connection', socket => {
     })
 })
 
-server.listen(3003, () => {
-    console.log('server is running on port 3003')
+server.listen(3000, () => {
+    console.log('server is running on port 3000')
 })
